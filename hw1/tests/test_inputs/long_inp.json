@@ -1,0 +1,79 @@
+{
+	"just_a_list": [
+		10,
+		"green",
+		"bottles"
+	],
+	"@event": {
+		"timestamp": 45267,
+		"Logger": "ExampleService.335",
+		"line": 339,
+		"datetime": "2019-03-24T19:40:17.940Z[UTC]",
+		"thread": {
+			"id": 2,
+			"name": "main"
+		},
+		"class": "f48ebb70",
+		"file": "ExampleService.scala",
+		"Level": "trace"
+	},
+	"just_an_arg": "example",
+	"just_a_list": [
+		10,
+		"green",
+		"bottles"
+	],
+	"@event": {
+		"timestamp": 45267,
+		"Logger": "ExampleService.335",
+		"line": 339,
+		"datetime": "2019-03-24T19:40:17.940Z[UTC]",
+		"thread": {
+			"id": 2,
+			"name": "main"
+		},
+		"class": "f48ebb70",
+		"file": "ExampleService.scala",
+		"Level": "trace"
+	},
+	"@event": {
+		"timestamp": 267,
+		"Logger": "ExampleService.3344",
+		"line": 339,
+		"datetime": "2022-03-24T19:40:17.940Z[UTC]",
+		"thread": {
+			"id": 45,
+			"name": "main"
+		},
+		"class": "f48eberb70",
+		"file": "ExampleService.scala1",
+		"Level": "trace-1"
+	},
+	"just_an_arg": "example",
+	"just_a_list": [
+		1056,
+		"orange",
+		"boxes"
+	],
+	"just_an_arg": "example-1",
+	"just_an_arg": "example-2",
+	"@event": {
+		"timestamp": 56,
+		"Logger": "ExampleService.457",
+		"line": 339,
+		"datetime": "2017-03-24T19:20:58.940Z[UTC]",
+		"thread": {
+			"id": 45,
+			"name": "main"
+		},
+		"class": "f48rb70",
+		"file": "ExampleService.scala1",
+		"Level": "trace-1"
+	},
+	"just_an_arg": "example-56",
+	"just_a_list": [
+		123,
+		"black",
+		"pencils"
+	]
+}

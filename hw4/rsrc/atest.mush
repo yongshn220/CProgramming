@@ -1,0 +1,9 @@
+10 echo "Let's start!"
+20 set x = 0
+30 date >@
+40 set d = $OUTPUT
+50 echo The date and time is: $d
+60 sleep 1
+70 set x = #x + 1
+80 if #x <= 10 goto 30
+90 stop

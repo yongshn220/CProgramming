@@ -1,0 +1,18 @@
+[
+        {
+                "id": 100,
+                "sorc": "7.18.1.45",
+                "dest": "1.2.3.4",
+                "srvc": "tcp/22",
+                "svrs": "new york",
+                "desc": "Data centers in group A"
+        },
+        {
+                "id": 101,
+                "sorc": "7.18.1.45",
+                "dest": "1.2.3.4",
+                "srvc": "tcp/80",
+                "svrs": "new york, new jercy",
+                "desc": "Data centers in group B"
+        }
+]

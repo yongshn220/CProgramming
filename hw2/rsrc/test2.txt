@@ -1,0 +1,5 @@
+        1  Four score and
+        2  seven years ago,
+        3  our fathers brought
+        4  forth on this continent
+        5  a new nation.

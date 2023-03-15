@@ -1,0 +1,80 @@
+
+     // Perform required initialization of the PBX module.
+    debug("Initializing PBX...");
+    pbx = pbx_init();
+
+    int port;
+    if(argc != 3){
+        debug("ERR argc");
+        exit(0);
+    }
+    else
+    {
+        port = atoi(argv[2]);
+        if(port == 0)
+        {
+            debug("ERR port#");
+            exit(0);
+        }
+    }
+
+    debug("port: %d", port);
+
+    //---------------------------------------------------------------
+    //-----------------------socket----------------------------------
+
+    struct addrinfo hints, *listp, *p;
+    int listenfd, optval = 1;
+
+    memset(&hints, 0, sizeof(struct addrinfo));
+
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_flags = AI_PASSIVE | AI_ADDRCONFIG;
+    hints.ai_flags |= AI_NUMERICSERV;
+
+    if(getaddrinfo(NULL, argv[2], &hints, &listp) == -1) {debug("ERR"); exit(0);}
+
+
+    for(p = listp; p; p = p->ai_next)
+    {
+        if((listenfd = socket(p->ai_family, p->ai_socktype, p->ai_protocol)) < 0) { continue; }
+
+        if(setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (const void *)&optval, sizeof(int)) == -1) {debug("ERR"); exit(0);}
+
+        if(bind(listenfd, p->ai_addr, p->ai_addrlen) == 0) break;
+
+        close(listenfd);
+    }
+
+    freeaddrinfo(listp);
+
+    if(!p) // no address worked
+    {
+        debug("ERR");
+        exit(0);
+    }
+
+    if(listen(listenfd, BACKLOG) < 0)
+    {
+        close(listenfd);
+        debug("ERR");
+        exit(0);
+    }
+
+
+    //-----------------------------------------------------------------
+    //--------------------------accept---------------------------------
+
+    SA_IN client_addr;
+    int connfd, clientlen;
+    while(1)
+    {
+        clientlen = sizeof(SA_IN);
+        connfd = accept(listenfd, (SA*) &client_addr, (socklen_t*) &clientlen);
+
+        pthread_t t;
+        int *pclient = malloc(sizeof(int));
+        *pclient = connfd;
+        pthread_create(&t, NULL, pbx_client_service, pclient);
+        debug("Thread created");
+    }

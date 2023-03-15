@@ -1,0 +1,39 @@
+{
+     "just_a_list": [
+          10,
+          "green",
+          "bottles"
+     ],
+     "@event": {
+          "timestamp": 45267,
+          "Logger": "ExampleService.335",
+          "line": 339,
+          "datetime": "2019-03-24T19:40:17.940Z[UTC]",
+          "thread": {
+               "id": 2,
+               "name": "main"
+          },
+          "class": "f48ebb70",
+          "file": "ExampleService.scala",
+          "Level": "trace"
+     },
+     "just_an_arg": "example",
+     "just_a_list": [
+          10,
+          "green",
+          "bottles"
+     ],
+     "@event": {
+          "timestamp": 45267,
+          "Logger": "ExampleService.335",
+          "line": 339,
+          "datetime": "2019-03-24T19:40:17.940Z[UTC]",
+          "thread": {
+               "id": 2,
+               "name": "main"
+          },
+          "class": "f48ebb70",
+          "file": "ExampleService.scala",
+          "Level": "trace"
+     }
+}
